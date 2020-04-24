@@ -1,7 +1,7 @@
 
 
-public class Buffer {
-    public Buffer(int cantLugar) {
+public class Bufer {
+    public Bufer(int cantLugar) {
         private Article[] lugares = new Article[cantLugares];
         int cantLugares = cantLugar;
     }
@@ -9,7 +9,7 @@ public class Buffer {
     public void addItem(Article articulo) {
         if(this.isFull()){
             for (Article i : lugares) {
-                if(i==null){
+                if(i=="null"){
                     i=articulo;
                     System.out.println("Se agregó el articulo exitosamente");
                 }
@@ -22,7 +22,7 @@ public class Buffer {
     public void takeItem() {
         if(this.isEmpty()) {
             for (int i = 0; i < this.lugares.length; i++) {
-                if (i != null) {
+                if (i != "null") {
                     this.lugares[i] = null;
                     System.out.println("Se consumio el articulo exitosamente");
                     i=this.lugares.length;
