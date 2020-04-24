@@ -9,7 +9,7 @@ public class Bufer {
     public void addItem(Article articulo) {
         if(this.isFull()){
             for (Article i : lugares) {
-                if(i=="null"){
+                if(i==Null){
                     i=articulo;
                     System.out.println("Se agregó el articulo exitosamente");
                 }
@@ -22,7 +22,7 @@ public class Bufer {
     public void takeItem() {
         if(this.isEmpty()) {
             for (int i = 0; i < this.lugares.length; i++) {
-                if (i != "null") {
+                if (i != Null) {
                     this.lugares[i] = null;
                     System.out.println("Se consumio el articulo exitosamente");
                     i=this.lugares.length;
