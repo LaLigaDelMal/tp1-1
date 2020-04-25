@@ -18,20 +18,9 @@ public class Consumidor implements Runnable {
 	
 	@Override
 	public void run() {
-		try {
-			System.out.printf("%s : I'm going to consume an article\n",Thread.currentThread().getName());
-			System.out.println(buffardo.getCuantity());
-			consume();
-			
-			Long dormir=(long)( Math.random() );
-			TimeUnit.MILLISECONDS.sleep(dormir);
-			
-			System.out.println(buffardo.getCuantity());
-			System.out.printf("%s : I've just consume an article! yay\n",Thread.currentThread().getName());
-
-		}catch(InterruptedException e){
-				System.out.println("hay que traer el pan a la mesa");
-			}
+		System.out.printf("%s : I'm going to consume an article\n",Thread.currentThread().getName());
+		consume();
+		System.out.printf("%s : I've just consume an article! yay\n",Thread.currentThread().getName());
 		
 	}
 	

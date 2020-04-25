@@ -1,26 +1,25 @@
 package tp1;
 
-import jdk.nashorn.api.tree.ForInLoopTree;
 
 public class Main {
-	public static final int CANT_PROD = 5;
-	public static final int CANT_CONS = 5;
+	public static final int CANT_PROD = 5;  //Cantidad de productores
+	public static final int CANT_CONS = 5;  //Cantidad de Consumidores
 
     public static void main(String[] args) {
     	
-        Buffardo buffer = new Buffardo(7);
+        Buffardo buffer = new Buffardo(7);  //args: Cantidad de espacio en el Buffer
         Article articulo = new Article();					
 		
-		Thread productores [] = new Thread [CANT_PROD];			//creo array de hilos que contendran objetos del tipo Productor
-		Thread consumidores [] = new Thread [CANT_CONS];		//creo array de hilos que contendran objetos del tipo Consumidor
+		Thread productores [] = new Thread [CANT_PROD];			//array de hilos que contendran objetos del tipo Productor
+		Thread consumidores [] = new Thread [CANT_CONS];		//array de hilos que contendran objetos del tipo Consumidor
 		
 		
 		for (int i=0; i<CANT_PROD; i++) {
 			
-			Productor productor = new Productor(buffer);			//creo un objeto productor
-			productores[i] = new Thread(productor);					//seteo el hilo con el objeto productor
-			productores[i].setName("Productor " + i);				//declaro nombres para los hilos
-			productores[i].start();									//ejecuto el hilo
+			Productor productor = new Productor(buffer);			//Se crean los objetos productor
+			productores[i] = new Thread(productor);					//y se mandan a los hilos
+			productores[i].setName("Productor " + i);				//Nombres para los hilos
+			productores[i].start();									//Se ejecuta los hilos
 		}
 		
 		
@@ -34,8 +33,7 @@ public class Main {
 		}
 		
 		
-		//Log log = new Log(buffer, consumidores);					//creo un objeto log que contiene la info de los resultados
-
+		//Log log = new Log(buffer, consumidores);					//Se crea el log
 
     }
 }

@@ -1,6 +1,7 @@
 package tp1;
 
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.TimeUnit;
 
 public class Buffardo {
     private Article[] lugares;
@@ -17,8 +18,10 @@ public class Buffardo {
 	public boolean addItem(Article art) {
     	boolean success=false;
     	try {
-    		semaforo.acquire();
-    		//TODO duracion en ms
+    		semaforo.acquire(); //Se pelean por el semaforo
+    		
+    		aguanta(1,1000); //product/consum tardan un rato en meter/sacar       
+			
     		if( !this.isFull() ){
     			for (int i = 0; i < this.lugares.length; i++) {
     				if(this.lugares[i]==null){
@@ -31,10 +34,10 @@ public class Buffardo {
     		}else{
     			System.out.println("Jodete puto, no entra");
     		}
-    	}catch(InterruptedException e){
-    		e.printStackTrace();
+    	}catch(InterruptedException e){ 
+    		e.printStackTrace();   //Los que no consiguen el semaforo se vienen acá
     	}finally {
-    		semaforo.release();
+    		semaforo.release();   //el que ganó el semaforo se viene acá
     	}
     	return success;
     }
@@ -43,7 +46,9 @@ public class Buffardo {
     public void takeItem() {
     	try {
     		semaforo.acquire();
-    		//TODO duracion en ms
+    		
+    		aguanta(1,1000); //product/consum tardan un rato en meter/sacar   
+    		
     		if( !this.isEmpty() ) {
     			for (int i = 0; i < this.lugares.length; i++) {
     				if(this.lugares[i]!=null){
@@ -83,5 +88,19 @@ public class Buffardo {
         }
         return x;
     }
+    
+    public void aguanta(int minimun, int maximun){
+    	int max = maximun; 
+        int min = minimun; 
+        int range = max - min + 1; 
+    	Long dormir=(long)( Math.random() * range);
+    	
+    	try {
+			TimeUnit.MILLISECONDS.sleep(dormir);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} 
+    }
+    
 
 }
