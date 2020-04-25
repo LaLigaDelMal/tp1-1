@@ -6,7 +6,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		Buffer buffer [] = new Buffer();						//?¿ esto no se si deberia ser un array ¿?
+		Buffer buffer = new Buffer();						
 		
 		Thread productores [] = new Thread [CANT_PROD];			//creo array de hilos que contendran objetos del tipo Productor
 		Thread consumidores [] = new Thread [CANT_CONS];		//creo array de hilos que contendran objetos del tipo Consumidor
