@@ -7,8 +7,8 @@ public class Article {
 	private static int artConsum = 0;
 	private static int artDisc = 0;
 	
-	private Lock consumLock;
-	private Lock discLock;
+	private static Lock consumLock;
+	private static Lock discLock;
 	
 	public Article() {
 		consumLock = new ReentrantLock();
