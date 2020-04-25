@@ -33,7 +33,6 @@ public class Main {
 			consumidores[i].start();
 		}
 		
-		
 		//Log log = new Log(buffer, consumidores);					//creo un objeto log que contiene la info de los resultados
 
 
