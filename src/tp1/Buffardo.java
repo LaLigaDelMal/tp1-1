@@ -6,17 +6,17 @@ public class Buffardo {
 
     public Buffardo(int i) {
         cantLugares = i;
-        lugares = new Article[25];
+        lugares = new Article[cantLugares];
     }
     
     public void addItem(Article art) {
     	
-    	if( this.isFull() ){
-            for (Article i : lugares) {
-                if(i==null){
-                    i=art;
+    	if( !this.isFull() ){
+    		for (int i = 0; i < this.lugares.length; i++) {
+                if(this.lugares[i]==null){
+                	this.lugares[i]=art;
                     System.out.println("Se agregó el articulo exitosamente");
-                    break;
+                    i=cantLugares+1;
                 }
             }
         }else{
@@ -26,15 +26,16 @@ public class Buffardo {
 
 
     public void takeItem() {
-    	
-        if(this.isEmpty()) {
-            for (int i = 0; i < this.lugares.length; i++) {
-                //this.lugares[i] = null;
-                System.out.println("Se consumio el articulo exitosamente");
-                i=this.lugares.length;
+        if( !this.isEmpty() ) {
+        	for (int i = 0; i < this.lugares.length; i++) {
+        		if(this.lugares[i]!=null){
+        			this.lugares[i] = null;
+        			System.out.println("Se consumio el articulo exitosamente");
+        			i=this.lugares.length+1;
+        		}
             }
         }else{
-            System.out.println("Jodete, esta vacio");
+            System.out.println("No hay articulos, aguanta un cacho");
         }
     }
 
@@ -53,7 +54,9 @@ public class Buffardo {
     public int getCuantity(){
         int x=0;
         for (int i = 0; i < this.lugares.length; i++) {
-            x++;
+            if(this.lugares[i]!=null){
+        		x++;
+        	}
         }
         return x;
     }
