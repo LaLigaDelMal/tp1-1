@@ -33,7 +33,7 @@ public class Buffardo {
     				}
     			}
     		}else{
-    			System.out.println("Jodete puto, no entra");
+    			System.out.println("Buffer lleno!");
     		}
     	}catch(InterruptedException e){ 
     		e.printStackTrace();   //Los que no consiguen el semaforo se vienen acá
@@ -84,17 +84,15 @@ public class Buffardo {
     public int getCuantity(){
         int x=0;
         for (int i = 0; i < this.lugares.length; i++) {
-            if(this.lugares[i]!=null){
-        		x++;
-        	}
+            if(this.lugares[i]!=null){x++;}
         }
         return x;
     }
     
     public void aguanta(int minimun, int maximun){
-    	int max = maximun; 
-        int min = minimun; 
+    	int max = maximun; int min = minimun; 
         int range = max - min + 1; 
+        
     	Long dormir=(long)( Math.random() * range);
     	
     	try {
