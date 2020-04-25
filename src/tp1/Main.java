@@ -1,9 +1,12 @@
 package tp1;
-import Bufer;
 
 public class Main {
 
     public static void main(String[] args) {
-        Bufer coso = new Bufer(25);
+    	
+        Buffardo coso = new Buffardo(25);
+        Article articulo = new Article();
+        coso.addItem(articulo);
+        System.out.println("Se consumiasdasdasasdo el articulo exitosamente");
     }
 }
