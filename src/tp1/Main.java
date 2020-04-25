@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
     	
-        Buffardo coso = new Buffardo(2);
+        Buffardo coso = new Buffardo(3);
         Article articulo = new Article();
         coso.addItem(articulo);
         coso.addItem(articulo);
