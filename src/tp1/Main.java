@@ -4,27 +4,23 @@ import jdk.nashorn.api.tree.ForInLoopTree;
 
 public class Main {
 	public static final int CANT_PROD = 5;
-	public static final int CANT_CONS = 9;
+	public static final int CANT_CONS = 5;
 
     public static void main(String[] args) {
     	
-        Buffardo buffer = new Buffardo(4);
+        Buffardo buffer = new Buffardo(7);
         Article articulo = new Article();					
 		
-		//Thread productores [] = new Thread [CANT_PROD];			//creo array de hilos que contendran objetos del tipo Productor
+		Thread productores [] = new Thread [CANT_PROD];			//creo array de hilos que contendran objetos del tipo Productor
 		Thread consumidores [] = new Thread [CANT_CONS];		//creo array de hilos que contendran objetos del tipo Consumidor
 		
-		/*
+		
 		for (int i=0; i<CANT_PROD; i++) {
 			
 			Productor productor = new Productor(buffer);			//creo un objeto productor
 			productores[i] = new Thread(productor);					//seteo el hilo con el objeto productor
 			productores[i].setName("Productor " + i);				//declaro nombres para los hilos
 			productores[i].start();									//ejecuto el hilo
-		}*/
-		
-		for (int i = 0; i < 6; i++) {
-			buffer.addItem(articulo);
 		}
 		
 		

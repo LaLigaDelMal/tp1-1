@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
 	<name>tp1</name>
-	<comment></comment>
-	<projects>
-	</projects>
+<<<<<<< HEAD
+	<comment/>
+	<projects/>
 	<buildSpec>
 		<buildCommand>
 			<name>org.eclipse.jdt.core.javabuilder</name>
-			<arguments>
-			</arguments>
+			<arguments/>
 		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
+=======
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+>>>>>>> 6e0d889ad7864f3ac69a7184549dbf5edd00f621
 	</natures>
 </projectDescription>

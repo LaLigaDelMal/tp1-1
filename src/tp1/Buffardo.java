@@ -13,7 +13,9 @@ public class Buffardo {
         semaforo = new Semaphore(1);
     }
     
-    public void addItem(Article art) {
+    
+	public boolean addItem(Article art) {
+    	boolean success=false;
     	try {
     		semaforo.acquire();
     		//TODO duracion en ms
@@ -23,6 +25,7 @@ public class Buffardo {
     					this.lugares[i]=art;
     					System.out.println("Se agregó el articulo exitosamente");
     					i=cantLugares+1;
+    					success=true;
     				}
     			}
     		}else{
@@ -33,6 +36,7 @@ public class Buffardo {
     	}finally {
     		semaforo.release();
     	}
+    	return success;
     }
 
 
