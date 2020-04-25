@@ -32,8 +32,8 @@ public class Main {
 			consumidores[i].start();
 		}
 		
-		
 		//Log log = new Log(buffer, consumidores);					//Se crea el log
+
 
     }
 }

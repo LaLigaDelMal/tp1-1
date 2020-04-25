@@ -3,7 +3,6 @@ package tp1;
 //eliminada variable state
 //eliminado metodo setState()
 
-import java.util.concurrent.TimeUnit;
 
 public class Consumidor implements Runnable {
 	
@@ -21,7 +20,6 @@ public class Consumidor implements Runnable {
 		System.out.printf("%s : I'm going to consume an article\n",Thread.currentThread().getName());
 		consume();
 		System.out.printf("%s : I've just consume an article! yay\n",Thread.currentThread().getName());
-		
 	}
 	
 	public void consume() {

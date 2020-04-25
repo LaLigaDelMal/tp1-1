@@ -7,6 +7,7 @@ public class Buffardo {
     private Article[] lugares;
     private final Semaphore semaforo;
     int cantLugares;
+    private Article article = new Article();
 
     public Buffardo(int i) {
         cantLugares = i;
@@ -54,6 +55,7 @@ public class Buffardo {
     				if(this.lugares[i]!=null){
     					this.lugares[i] = null;
     					System.out.println("Se consumio el articulo exitosamente");
+    					article.incrementArtConsum();
     					i=this.lugares.length+1;
     				}
     			}
