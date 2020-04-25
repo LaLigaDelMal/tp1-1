@@ -6,24 +6,26 @@ package tp1;
 public class Consumidor implements Runnable {
 	
 	
-	private Buffardo buffer;
+	private Buffardo buffardo;
 	//private String state;
 	
-	public Consumidor(Buffardo buffer) {
+	public Consumidor(Buffardo Buffardo) {
 		
-		this.buffer = buffer;
+		this.buffardo = Buffardo;
 	}
 	
 	@Override
 	public void run() {
 		
 		System.out.printf("%s : I'm going to consume an article\n",Thread.currentThread().getName());
-        consume();
+        System.out.println(buffardo.getCuantity());
+		consume();
+		System.out.println(buffardo.getCuantity());
         System.out.printf("%s : I've just consume an article! yay\n",Thread.currentThread().getName());
 	}
 	
 	public void consume() {
-		buffer.takeItem();
+		buffardo.takeItem();
 	
 	}
 	public String getState() {
