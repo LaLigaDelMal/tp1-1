@@ -30,7 +30,7 @@ public class Consumidor implements Runnable {
 			System.out.printf("%s : I've just consume an article! yay\n",Thread.currentThread().getName());
 
 		}catch(InterruptedException e){
-				System.out.println("hay que traer el pan a la mesa");
+				System.out.println("Mas, quiero maaaaaaas");
 			}
 		
 	}

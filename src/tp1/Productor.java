@@ -16,11 +16,12 @@ public class Productor implements Runnable{
 		this.article = article;
 	}
 	
-	private void discard(Article article) {
+	private void discard() {
+		article.incrementArtDisc();
 		article = null;
 	}
 	
-	private boolean placement(Article article) {
+	private boolean placement() {
 		System.out.printf("%s : Voy a ponerla\n",Thread.currentThread().getName());
 		return buffer.addItem(article);
 	}
@@ -34,8 +35,8 @@ public class Productor implements Runnable{
 			TimeUnit.MILLISECONDS.sleep(dormir);
 			
 			generate();
-			if( placement(article) == false )
-				discard(article);
+			if( placement() == false )
+				discard();
 			}
 		
 		catch(InterruptedException e){
