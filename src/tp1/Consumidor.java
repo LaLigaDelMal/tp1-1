@@ -9,26 +9,30 @@ public class Consumidor implements Runnable {
 	
 	private String state;
 	private Buffardo buffardo;
+	private Article article;
 	//private String state;
 	
 	public Consumidor(Buffardo Buffardo) {
 		this.buffardo = Buffardo;
 		state = "Disponible";
+		article = new Article();
 	}
 	
 	@Override
 	public void run() {
-		try {	
-			System.out.printf("%s : I'm going to consume an article\n",Thread.currentThread().getName());
-			consume();
-			setState("Consumiendo");
-			Long dormir=(long)( Math.random() );
-			TimeUnit.MILLISECONDS.sleep(dormir);
-			setState("Disponible");
+		while(article.getArtConsum()<100) {
+			try {	
+				System.out.printf("%s : I'm going to consume an article\n",Thread.currentThread().getName());
+				consume();
+				setState("Consumiendo");
+				Long dormir=(long)( Math.random() );
+				TimeUnit.MILLISECONDS.sleep(dormir);
+				setState("Disponible");
 			}
-		
-		catch(InterruptedException e){
-			System.out.println("hay que traer el pan a la mesa");
+
+			catch(InterruptedException e){
+				System.out.println("hay que traer el pan a la mesa");
+			}
 		}
 	}
 	

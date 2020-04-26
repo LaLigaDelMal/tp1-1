@@ -6,9 +6,11 @@ public class Productor implements Runnable{
 
 	private Buffardo buffer;
 	public Article article;
+	private Article article_aux;
 	
 	public Productor(Buffardo buffer) {
 		this.buffer = buffer;
+		article_aux = new Article();
 	}
 	
 	private void generate() {
@@ -28,19 +30,20 @@ public class Productor implements Runnable{
 
 	@Override
 	public void run() {
-		
-		try {
-			
-			Long dormir=(long)( Math.random() );
-			TimeUnit.MILLISECONDS.sleep(dormir);
-			
-			generate();
-			if( placement() == false )
-				discard();
+		while(article_aux.getArtConsum()<100) {
+			try {
+
+				Long dormir=(long)( Math.random() );
+				TimeUnit.MILLISECONDS.sleep(dormir);
+
+				generate();
+				if( placement() == false )
+					discard();
 			}
-		
-		catch(InterruptedException e){
-			System.out.println("hay que traer el pan a la mesa");
+
+			catch(InterruptedException e){
+				System.out.println("hay que traer el pan a la mesa");
+			}
 		}
 	}
 	

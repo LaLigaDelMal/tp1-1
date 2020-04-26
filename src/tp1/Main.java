@@ -2,7 +2,7 @@ package tp1;
 
 
 public class Main {
-	public static final int CANT_PROD = 5;  //Cantidad de productores
+	public static final int CANT_PROD = 7;  //Cantidad de productores
 	public static final int CANT_CONS = 5;  //Cantidad de Consumidores
 
     public static void main(String[] args) {

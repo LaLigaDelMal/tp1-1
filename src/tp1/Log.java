@@ -8,8 +8,10 @@ public class Log implements Runnable {
 	private Thread[] consumer_list;
 	private FileWriter f;
 	private PrintWriter pw;
+	private Article article_aux;
 	
 	public Log(Buffardo buffer,Thread[] consumer_list) {
+		this.article_aux = new Article();
 		this.buffer = buffer;
 		this.consumer_list = consumer_list;
 		try {
@@ -24,19 +26,18 @@ public class Log implements Runnable {
 	
 	@Override
 	public void run() {
-		//while(true) {
-			try {
-				TimeUnit.SECONDS.sleep(2);
-				pw.println("Cantidad de lugares ocupados del buffer: "+buffer.get_Counter());
-				for(int i=0;i<consumer_list.length;i++) {
-					pw.println(consumer_list[i].getState());
-				}
-				pw.close();
-				f.close();
+		try {
+			TimeUnit.SECONDS.sleep(2);
+			pw.println("Cantidad de lugares ocupados del buffer: "+buffer.get_Counter());
+			pw.println("Cantidad de articulos descartados: "+article_aux.getArtDisc());
+			for(int i=0;i<consumer_list.length;i++) {
+				pw.println(consumer_list[i].getState());
 			}
-			catch(InterruptedException | IOException e) {
-				System.out.println("IOException o InterruptedException (we dont want 2 know)");
-			}
-		//}
+			pw.close();
+			f.close();
+		}
+		catch(InterruptedException | IOException e) {
+			System.out.println("IOException o InterruptedException (we dont want 2 know)");
+		}
 	}	
 }
