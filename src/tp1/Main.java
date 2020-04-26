@@ -12,7 +12,6 @@ public class Main {
 		Thread productores [] = new Thread [CANT_PROD];			//array de hilos que contendran objetos del tipo Productor
 		Thread consumidores [] = new Thread [CANT_CONS];		//array de hilos que contendran objetos del tipo Consumidor
 		
-		
 		for (int i=0; i<CANT_PROD; i++) {
 			
 			Productor productor = new Productor(buffer);			//Se crean los objetos productor
@@ -20,7 +19,6 @@ public class Main {
 			productores[i].setName("Productor " + i);				//Nombres para los hilos
 			productores[i].start();									//Se ejecuta los hilos
 		}
-		
 		
 		for (int i=0; i<CANT_CONS; i++) {
 			
@@ -30,8 +28,9 @@ public class Main {
 			consumidores[i].start();
 		}
 		
-		//Log log = new Log(buffer, consumidores);					//Se crea el log
-
+		Log log = new Log(buffer, consumidores);				//Se crea el log
+		Thread log_t = new Thread(log);
+		log_t.start();
 
     }
 }
