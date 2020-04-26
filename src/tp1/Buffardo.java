@@ -44,28 +44,11 @@ public class Buffardo {
     }
 
 
-    public void takeItem() {
-    	try {
-    		semaforo.acquire();
-    		
-    		if( !this.isEmpty() ) {
-    			for (int i = 0; i < this.lugares.length; i++) {
-    				if(this.lugares[i]!=null){
-    					this.lugares[i] = null;
-    					System.out.println("Se consumio el articulo exitosamente");
-    					article.incrementArtConsum();
-    					i=this.lugares.length+1;
-    				}
-    			}
-    		}else{
-    			System.out.println("No hay articulos, aguanta un cacho");
-    		}
-    	}catch(InterruptedException e){
-    		e.printStackTrace();
-    	}finally {
-    		semaforo.release();
-    	}
-    }
+	public void takeItem(int pos) {
+		this.lugares[pos] = null;
+		article.incrementArtConsum();
+		System.out.println("Se consumio el articulo exitosamente");
+	}
 
     public boolean isFull(){
         if(this.getCuantity()==this.cantLugares){return true;}else{return false;}
@@ -100,18 +83,23 @@ public class Buffardo {
 		} 
     }
     
-    public void get_RLock() {
+    public void get_WLock() {
     	lock.writeLock().tryLock();
     }
     
-    public boolean get_WLock(int pos) {
+    public boolean get_RLock() {
     	lock.readLock().lock();
-    	if(this.lugares[pos]==null){
-			lock.readLock().unlock();
-			return false;
-		}
-    	lock.readLock().unlock();
-    	return true;
-    }    
+    	if( !this.isEmpty() ) {
+    		for (int i = 0; i < this.lugares.length; i++) {
+    			if(this.lugares[i]!=null){
+    				this.takeItem(i);
+    				lock.readLock().unlock();
+    				return false;
+    			}
+    		}
+    	}
+		lock.readLock().unlock();
+		return true;
+    }
 
 }
