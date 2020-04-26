@@ -2,26 +2,26 @@ package tp1;
 
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
-
+import java.util.concurrent.locks.*;
 public class Buffardo {
     private Article[] lugares;
     private final Semaphore semaforo;
     int cantLugares;
     private Article article = new Article();
+    private ReadWriteLock lock;
 
     public Buffardo(int i) {
         cantLugares = i;
         lugares = new Article[cantLugares];
         semaforo = new Semaphore(1);
+        lock = new ReentrantReadWriteLock();
     }
     
     
 	public boolean addItem(Article art) {
     	boolean success=false;
     	try {
-    		semaforo.acquire(); //Se pelean por el semaforo
-    		
-    		aguanta(1,1000); //product/consum tardan un rato en meter/sacar       
+    		semaforo.acquire(); //Se pelean por el semaforo   
 			
     		if( !this.isFull() ){
     			for (int i = 0; i < this.lugares.length; i++) {
@@ -47,8 +47,6 @@ public class Buffardo {
     public void takeItem() {
     	try {
     		semaforo.acquire();
-    		
-    		aguanta(1,1000); //product/consum tardan un rato en meter/sacar   
     		
     		if( !this.isEmpty() ) {
     			for (int i = 0; i < this.lugares.length; i++) {
@@ -102,5 +100,18 @@ public class Buffardo {
 		} 
     }
     
+    public void get_RLock() {
+    	lock.writeLock().tryLock();
+    }
+    
+    public boolean get_WLock(int pos) {
+    	lock.readLock().lock();
+    	if(this.lugares[pos]==null){
+			lock.readLock().unlock();
+			return false;
+		}
+    	lock.readLock().unlock();
+    	return true;
+    }    
 
 }
