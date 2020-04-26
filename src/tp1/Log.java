@@ -27,7 +27,7 @@ public class Log implements Runnable {
 		//while(true) {
 			try {
 				TimeUnit.SECONDS.sleep(2);
-				pw.println("Cantidad de lugares ocupados del buffer: "+buffer.getCuantity());
+				pw.println("Cantidad de lugares ocupados del buffer: "+buffer.get_Counter());
 				for(int i=0;i<consumer_list.length;i++) {
 					pw.println(consumer_list[i].getState());
 				}
