@@ -1,6 +1,7 @@
 package tp1;
 
 public class Article {
+	
     
 	private static int artConsum = 0;
 	private static int artDisc = 0;

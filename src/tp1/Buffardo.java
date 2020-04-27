@@ -10,16 +10,20 @@ public class Buffardo {
 	private HashMap<String,String> consumerState;
 	private Article                article;
 	private final int              bufferSize;
-	private final Object           controlState;
+	
 
 
-	public Buffardo(int i) {
+	public Buffardo(int i,int threadQuantity) {
 		
-		bufferSize    = i;
-		lugares       = new LinkedList<Article>();
-		consumerState = new HashMap<String,String>();
-		article       = new Article();
-        controlState  = new Object();
+		bufferSize          = i;
+		lugares             = new LinkedList<Article>();
+		consumerState       = new HashMap<String,String>();
+		article             = new Article();
+		
+		for(int j=0; i<threadQuantity; j++) {
+			consumerState.put(("Consumidor "+j), Estados.DISPONIBLE.name());
+		}
+       
 	}
 
 
@@ -39,7 +43,7 @@ public class Buffardo {
 	public synchronized void takeItem() {
 		while(lugares.size()==0) {
 			try {
-				setConsumerState(Thread.currentThread().getName(),Estados.OCUPADO.name());
+				setConsumerState(Thread.currentThread().getName(),Estados.DISPONIBLE.name());
 				wait();
 			}
 			catch(InterruptedException e) {
@@ -49,11 +53,11 @@ public class Buffardo {
 		if(article.getArtConsum()<1000) {
 			lugares.remove();
 			article.incrementArtConsum();
-			setConsumerState(Thread.currentThread().getName(),Estados.CONSUMIENDO.name());
+			setConsumerState(Thread.currentThread().getName(),Estados.OCUPADO_CONSUMIENDO.name());
 			System.out.printf("Articulo consumido por %s\n", Thread.currentThread().getName());
 			notify();
 		}
-			//setConsumerState(Thread.currentThread().getName(),Estados.CONSUMIENDO.name());
+			
 	}
 	
 	public int get_Counter() {
@@ -61,9 +65,9 @@ public class Buffardo {
 	}
 	
 	public void setConsumerState(String id, String state) {
-		synchronized(controlState) {
+		
 			consumerState.put(id, state);
-		}
+		
 	}
 	
 	public HashMap<String,String> getConsumerState(){

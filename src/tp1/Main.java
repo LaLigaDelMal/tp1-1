@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
     	
-        Buffardo buffer = new Buffardo(25);  //args: Cantidad de espacio en el Buffer			
+        Buffardo buffer = new Buffardo(25,CANT_CONS);  //args: Cantidad de espacio en el Buffer			
 		
 		Thread productores  [] = new Thread [CANT_PROD];	    //array de hilos que contendran objetos del tipo Productor
 		Thread consumidores [] = new Thread [CANT_CONS];		//array de hilos que contendran objetos del tipo Consumidor

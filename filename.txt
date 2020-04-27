@@ -1,0 +1,34 @@
+Prueba
+Fecha inicio: Mon Apr 27 14:04:53 ART 2020
+Cantidad de lugares ocupados del buffer: 20
+Cantidad de articulos descartados: 172
+Cantidad de articulos consumidos: 153
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 9 DISPONIBLE
+Consumidor 8 DISPONIBLE
+Consumidor 7 DISPONIBLE
+Consumidor 6 DISPONIBLE
+Consumidor 5 DISPONIBLE
+Consumidor 4 DISPONIBLE
+Consumidor 3 DISPONIBLE
+Consumidor 2 OCUPADO_CONSUMIENDO
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 14:04:53 ART 2020
+Cantidad de lugares ocupados del buffer: 9
+Cantidad de articulos descartados: 916
+Cantidad de articulos consumidos: 1000
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 9 DISPONIBLE
+Consumidor 8 DISPONIBLE
+Consumidor 7 DISPONIBLE
+Consumidor 6 DISPONIBLE
+Consumidor 5 DISPONIBLE
+Consumidor 4 DISPONIBLE
+Consumidor 3 DISPONIBLE
+Consumidor 2 DISPONIBLE
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 14:04:53 ART 2020

@@ -1,20 +1,15 @@
 package tp1;
-//Diferencias con el diagrama de clases: 
-//eliminada variable state
-//eliminado metodo setState()
 
 import java.util.concurrent.TimeUnit;
 
 public class Consumidor implements Runnable {
 	
-	//private String state;
 	private Buffardo buffardo;
 	private Article article;
 	
 	
 	public Consumidor(Buffardo Buffardo) {
 		this.buffardo = Buffardo;
-		//state = "Disponible";
 		article = new Article();
 	}
 	
@@ -41,12 +36,6 @@ public class Consumidor implements Runnable {
 		buffardo.takeItem();
 	}
 	
-//	public String getEstados() {
-//		return state;
-//	}
-//	
-//	public void setState(String state) {
-//    	this.state = state;
-//    }
+
     
 }
