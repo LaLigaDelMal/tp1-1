@@ -22,7 +22,7 @@ public class Consumidor implements Runnable {
 				
 				Long dormir=(long)( Math.random() );
 				TimeUnit.MILLISECONDS.sleep(dormir);
-				buffardo.setConsumerState(Thread.currentThread().getName(), Estados.DISPONIBLE.name());
+				//buffardo.setConsumerState(Thread.currentThread().getName(), Estados.DISPONIBLE.name());
 				
 			}
 

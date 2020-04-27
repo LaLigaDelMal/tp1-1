@@ -11,12 +11,14 @@ public class Log implements Runnable {
 	private FileWriter  f;
 	private PrintWriter pw;
 	private Article     article_aux;
+	private final Thread consumidores[];
 	
 	
-	public Log(Buffardo buffer, int cant) {
+	public Log(Buffardo buffer, Thread[] consumidores) {
 		
 		this.article_aux    = new Article();
 		this.buffer         = buffer;
+		this.consumidores = consumidores;
 
 		
 		
@@ -41,10 +43,13 @@ public class Log implements Runnable {
 					pw.println("Cantidad de articulos descartados: "+article_aux.getArtDisc());
 					pw.println("Cantidad de articulos consumidos: "+article_aux.getArtConsum());
 					pw.println("--------------------------Thread States--------------------------");
-					consumerState = buffer.getConsumerState();
-					for(String s: consumerState.keySet()) {
-						pw.println(s+" "+consumerState.get(s));
+					for(Thread s: consumidores) {
+						pw.println(s.getName()+": "+s.());
 					}
+//					consumerState = buffer.getConsumerState();
+//					for(String s: consumerState.keySet()) {
+//						pw.println(s+" "+consumerState.get(s));
+//					}
 					pw.println("-----------------------------------------------------------------");
 					pw.println("Fecha de fin: "+new Date());
 					
