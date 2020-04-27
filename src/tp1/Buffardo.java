@@ -1,6 +1,7 @@
 package tp1;
 
 import java.util.LinkedList;
+import java.util.concurrent.TimeUnit;
 import java.util.HashMap;
 
 public class Buffardo {
@@ -11,7 +12,6 @@ public class Buffardo {
 	private Article                article;
 	private final int              bufferSize;
 	
-
 
 	public Buffardo(int i,int threadQuantity) {
 		
@@ -53,7 +53,9 @@ public class Buffardo {
 		if(article.getArtConsum()<1000) {
 			lugares.remove();
 			article.incrementArtConsum();
+			
 			setConsumerState(Thread.currentThread().getName(),Estados.OCUPADO_CONSUMIENDO.name());
+			sleep(60,100);
 			System.out.printf("Articulo consumido por %s\n", Thread.currentThread().getName());
 			notify();
 		}
@@ -65,7 +67,6 @@ public class Buffardo {
 	}
 	
 	public void setConsumerState(String id, String state) {
-		
 			consumerState.put(id, state);
 		
 	}
@@ -73,4 +74,16 @@ public class Buffardo {
 	public HashMap<String,String> getConsumerState(){
 		return consumerState;
 	}
+    public void sleep(int minimun, int maximun){
+    	int max = maximun; int min = minimun; 
+        int range = max - min+1; 
+        
+    	Long dormir=(long)(Math.random() * range) + min;
+    	try {
+    		
+			TimeUnit.MILLISECONDS.sleep(dormir);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} 
+    }
 }

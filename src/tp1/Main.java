@@ -3,7 +3,7 @@ package tp1;
 
 public class Main {
 	public static final int CANT_PROD = 5;  //Cantidad de productores
-	public static final int CANT_CONS = 10;  //Cantidad de Consumidores
+	public static final int CANT_CONS = 3;  //Cantidad de Consumidores
 
     public static void main(String[] args) {
     	
@@ -31,6 +31,7 @@ public class Main {
 		Log    log   = new Log(buffer, CANT_CONS);				//Se crea el log
 		Thread log_t = new Thread(log);
 		log_t.start();
-
+		//System.exit(0);
     }
+    
 }

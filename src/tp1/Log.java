@@ -18,8 +18,7 @@ public class Log implements Runnable {
 		this.article_aux    = new Article();
 		this.buffer         = buffer;
 
-		
-		
+	
 		try {
 			f  = new FileWriter(".\\filename.txt");
 			pw = new PrintWriter(f);
