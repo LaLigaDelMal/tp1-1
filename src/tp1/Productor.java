@@ -30,7 +30,7 @@ public class Productor implements Runnable{
 
 	@Override
 	public void run() {
-		while(article_aux.getArtConsum()<100) {
+		while(article_aux.getArtConsum()<1000) {
 			try {
 
 				Long dormir=(long)( Math.random() );

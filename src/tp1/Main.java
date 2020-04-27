@@ -2,12 +2,12 @@ package tp1;
 
 
 public class Main {
-	public static final int CANT_PROD = 7;  //Cantidad de productores
-	public static final int CANT_CONS = 5;  //Cantidad de Consumidores
+	public static final int CANT_PROD = 1;  //Cantidad de productores
+	public static final int CANT_CONS = 3;  //Cantidad de Consumidores
 
     public static void main(String[] args) {
     	
-        Buffardo buffer = new Buffardo(7);  //args: Cantidad de espacio en el Buffer			
+        Buffardo buffer = new Buffardo(25);  //args: Cantidad de espacio en el Buffer			
 		
 		Thread productores [] = new Thread [CANT_PROD];			//array de hilos que contendran objetos del tipo Productor
 		Thread consumidores [] = new Thread [CANT_CONS];		//array de hilos que contendran objetos del tipo Consumidor

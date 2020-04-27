@@ -20,7 +20,7 @@ public class Consumidor implements Runnable {
 	
 	@Override
 	public void run() {
-		while(article.getArtConsum()<100) {
+		while(article.getArtConsum()<1000) {
 			try {	
 				System.out.printf("%s : I'm going to consume an article\n",Thread.currentThread().getName());
 				consume();

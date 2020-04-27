@@ -23,9 +23,11 @@ public class Buffardo {
 		if(lugares.size()<bufferSize) {
 			lugares.add(art);
 			System.out.printf("Articulo añadido por %s\n", Thread.currentThread().getName());
+			notify();
 			return true;
 		}
 		else {
+			notify();
 			return false;
 		}
 	}
@@ -39,10 +41,12 @@ public class Buffardo {
 				e.printStackTrace();
 			}
 		}
-		notify();
-		lugares.remove();
-		article.incrementArtConsum();
-		System.out.printf("Articulo consumido por %s\n", Thread.currentThread().getName());
+		if(article.getArtConsum()<1000) {
+			lugares.remove();
+			article.incrementArtConsum();
+			System.out.printf("Articulo consumido por %s\n", Thread.currentThread().getName());
+			notify();
+		}
 	}
 	
 	public int get_Counter() {
