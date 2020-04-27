@@ -1,106 +1,72 @@
 package tp1;
 
-import java.util.concurrent.Semaphore;
-import java.util.concurrent.TimeUnit;
+import java.util.LinkedList;
+import java.util.HashMap;
 
 public class Buffardo {
-    private Article[] lugares;
-    private final Semaphore semaforo;
-    int cantLugares;
-    private Article article = new Article();
-
-    public Buffardo(int i) {
-        cantLugares = i;
-        lugares = new Article[cantLugares];
-        semaforo = new Semaphore(1);
-    }
-    
-    
-	public boolean addItem(Article art) {
-    	boolean success=false;
-    	try {
-    		semaforo.acquire(); //Se pelean por el semaforo
-    		
-    		aguanta(1,1000); //product/consum tardan un rato en meter/sacar       
-			
-    		if( !this.isFull() ){
-    			for (int i = 0; i < this.lugares.length; i++) {
-    				if(this.lugares[i]==null){
-    					this.lugares[i]=art;
-    					System.out.println("Se agregó el articulo exitosamente");
-    					i=cantLugares+1;
-    					success=true;
-    				}
-    			}
-    		}else{
-    			System.out.println("Buffer lleno!");
-    		}
-    	}catch(InterruptedException e){ 
-    		e.printStackTrace();   //Los que no consiguen el semaforo se vienen acá
-    	}finally {
-    		semaforo.release();   //el que ganó el semaforo se viene acá
-    	}
-    	return success;
-    }
 
 
-    public void takeItem() {
-    	try {
-    		semaforo.acquire();
-    		
-    		aguanta(1,1000); //product/consum tardan un rato en meter/sacar   
-    		
-    		if( !this.isEmpty() ) {
-    			for (int i = 0; i < this.lugares.length; i++) {
-    				if(this.lugares[i]!=null){
-    					this.lugares[i] = null;
-    					System.out.println("Se consumio el articulo exitosamente");
-    					article.incrementArtConsum();
-    					i=this.lugares.length+1;
-    				}
-    			}
-    		}else{
-    			System.out.println("No hay articulos, aguanta un cacho");
-    		}
-    	}catch(InterruptedException e){
-    		e.printStackTrace();
-    	}finally {
-    		semaforo.release();
-    	}
-    }
+	private LinkedList<Article>    lugares;
+	private HashMap<String,String> consumerState;
+	private Article                article;
+	private final int              bufferSize;
+	private final Object           controlState;
 
-    public boolean isFull(){
-        if(this.getCuantity()==this.cantLugares){return true;}else{return false;}
-    }
 
-    public boolean isEmpty(){
-        if(this.getCuantity()<= 0){
-            return true;
-        }else{
-            return false;
-        }
-    }
+	public Buffardo(int i) {
+		
+		bufferSize    = i;
+		lugares       = new LinkedList<Article>();
+		consumerState = new HashMap<String,String>();
+		article       = new Article();
+        controlState  = new Object();
+	}
 
-    public int getCuantity(){
-        int x=0;
-        for (int i = 0; i < this.lugares.length; i++) {
-            if(this.lugares[i]!=null){x++;}
-        }
-        return x;
-    }
-    
-    public void aguanta(int minimun, int maximun){
-    	int max = maximun; int min = minimun; 
-        int range = max - min + 1; 
-        
-    	Long dormir=(long)( Math.random() * range);
-    	
-    	try {
-			TimeUnit.MILLISECONDS.sleep(dormir);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		} 
-    }
-    
 
+	public synchronized boolean addItem(Article art) {
+		if(lugares.size()<bufferSize) {
+			lugares.add(art);
+			System.out.printf("Articulo añadido por %s\n", Thread.currentThread().getName());
+			notify();
+			return true;
+		}
+		else {
+			notify();
+			return false;
+		}
+	}
+
+	public synchronized void takeItem() {
+		while(lugares.size()==0) {
+			try {
+				setConsumerState(Thread.currentThread().getName(),Estados.OCUPADO.name());
+				wait();
+			}
+			catch(InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		if(article.getArtConsum()<1000) {
+			lugares.remove();
+			article.incrementArtConsum();
+			setConsumerState(Thread.currentThread().getName(),Estados.CONSUMIENDO.name());
+			System.out.printf("Articulo consumido por %s\n", Thread.currentThread().getName());
+			notify();
+		}
+			//setConsumerState(Thread.currentThread().getName(),Estados.CONSUMIENDO.name());
+	}
+	
+	public int get_Counter() {
+		return lugares.size();
+	}
+	
+	public void setConsumerState(String id, String state) {
+		synchronized(controlState) {
+			consumerState.put(id, state);
+		}
+	}
+	
+	public HashMap<String,String> getConsumerState(){
+		return consumerState;
+	}
 }
