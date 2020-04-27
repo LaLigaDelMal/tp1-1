@@ -31,11 +31,7 @@ public class Productor implements Runnable{
 	@Override
 	public void run() {
 		while(article_aux.getArtConsum()<1000) {
-			
-				sleep(60,100);
-//				Long dormir=(long)( Math.random() );
-//				TimeUnit.MILLISECONDS.sleep(dormir);
-
+				sleep(6,10);
 				generate();
 				if( placement() == false )
 					discard();

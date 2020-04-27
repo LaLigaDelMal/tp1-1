@@ -56,7 +56,7 @@ public class Buffardo {
 			setConsumerState(Thread.currentThread().getName(),consumidor.getEstado());
 			lugares.remove();
 			article.incrementArtConsum();
-			sleep(60,100);
+			sleep(6,10);
 			System.out.printf("Articulo consumido por %s\n", Thread.currentThread().getName());
 			notify();
 		}

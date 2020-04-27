@@ -28,10 +28,11 @@ public class Main {
 			consumidores[i].start();
 		}
 		
-		Log    log   = new Log(buffer, consumidores);				//Se crea el log
+		Log    log   = new Log(buffer);				//Se crea el log
 		Thread log_t = new Thread(log);
 		log_t.start();
 		//System.exit(0);
+		System.out.println("se acabose");
     }
     
 }
