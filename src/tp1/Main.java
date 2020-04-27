@@ -28,7 +28,7 @@ public class Main {
 			consumidores[i].start();
 		}
 		
-		Log    log   = new Log(buffer, consumidores, CANT_CONS);				//Se crea el log
+		Log    log   = new Log(buffer, CANT_CONS);				//Se crea el log
 		Thread log_t = new Thread(log);
 		log_t.start();
 

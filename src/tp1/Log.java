@@ -13,7 +13,7 @@ public class Log implements Runnable {
 	private Article     article_aux;
 	
 	
-	public Log(Buffardo buffer,Thread[] consumer_list, int cant) {
+	public Log(Buffardo buffer, int cant) {
 		
 		this.article_aux    = new Article();
 		this.buffer         = buffer;
@@ -36,7 +36,7 @@ public class Log implements Runnable {
 				pw.println("Fecha inicio: "+new Date());
 				while(article_aux.getArtConsum()<1000) {
 					
-					TimeUnit.MILLISECONDS.sleep(100);
+					TimeUnit.SECONDS.sleep(2);
 					pw.println("Cantidad de lugares ocupados del buffer: "+buffer.get_Counter());
 					pw.println("Cantidad de articulos descartados: "+article_aux.getArtDisc());
 					pw.println("Cantidad de articulos consumidos: "+article_aux.getArtConsum());
