@@ -1,0 +1,371 @@
+Prueba
+Fecha inicio: Mon Apr 27 18:41:04 ART 2020
+Cantidad de lugares ocupados del buffer: 18
+Cantidad de articulos descartados: 0
+Cantidad de articulos consumidos: 26
+--------------------------Thread States--------------------------
+Consumidor 0 OCUPADO_CONSUMIENDO
+Consumidor 2 DISPONIBLE
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:06 ART 2020
+Cantidad de lugares ocupados del buffer: 22
+Cantidad de articulos descartados: 7
+Cantidad de articulos consumidos: 52
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 2 OCUPADO_CONSUMIENDO
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:08 ART 2020
+Cantidad de lugares ocupados del buffer: 24
+Cantidad de articulos descartados: 10
+Cantidad de articulos consumidos: 76
+--------------------------Thread States--------------------------
+Consumidor 0 OCUPADO_CONSUMIENDO
+Consumidor 2 DISPONIBLE
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:10 ART 2020
+Cantidad de lugares ocupados del buffer: 23
+Cantidad de articulos descartados: 22
+Cantidad de articulos consumidos: 100
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 2 DISPONIBLE
+Consumidor 1 OCUPADO_CONSUMIENDO
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:12 ART 2020
+Cantidad de lugares ocupados del buffer: 13
+Cantidad de articulos descartados: 22
+Cantidad de articulos consumidos: 126
+--------------------------Thread States--------------------------
+Consumidor 0 OCUPADO_CONSUMIENDO
+Consumidor 2 DISPONIBLE
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:14 ART 2020
+Cantidad de lugares ocupados del buffer: 5
+Cantidad de articulos descartados: 22
+Cantidad de articulos consumidos: 151
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 2 DISPONIBLE
+Consumidor 1 OCUPADO_CONSUMIENDO
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:16 ART 2020
+Cantidad de lugares ocupados del buffer: 12
+Cantidad de articulos descartados: 22
+Cantidad de articulos consumidos: 177
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 2 DISPONIBLE
+Consumidor 1 OCUPADO_CONSUMIENDO
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:18 ART 2020
+Cantidad de lugares ocupados del buffer: 0
+Cantidad de articulos descartados: 22
+Cantidad de articulos consumidos: 202
+--------------------------Thread States--------------------------
+Consumidor 0 OCUPADO_CONSUMIENDO
+Consumidor 2 DISPONIBLE
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:20 ART 2020
+Cantidad de lugares ocupados del buffer: 2
+Cantidad de articulos descartados: 22
+Cantidad de articulos consumidos: 228
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 2 OCUPADO_CONSUMIENDO
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:22 ART 2020
+Cantidad de lugares ocupados del buffer: 7
+Cantidad de articulos descartados: 22
+Cantidad de articulos consumidos: 253
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 2 OCUPADO_CONSUMIENDO
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:24 ART 2020
+Cantidad de lugares ocupados del buffer: 20
+Cantidad de articulos descartados: 22
+Cantidad de articulos consumidos: 276
+--------------------------Thread States--------------------------
+Consumidor 0 OCUPADO_CONSUMIENDO
+Consumidor 2 DISPONIBLE
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:26 ART 2020
+Cantidad de lugares ocupados del buffer: 24
+Cantidad de articulos descartados: 37
+Cantidad de articulos consumidos: 300
+--------------------------Thread States--------------------------
+Consumidor 0 OCUPADO_CONSUMIENDO
+Consumidor 2 DISPONIBLE
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:28 ART 2020
+Cantidad de lugares ocupados del buffer: 15
+Cantidad de articulos descartados: 38
+Cantidad de articulos consumidos: 326
+--------------------------Thread States--------------------------
+Consumidor 0 OCUPADO_CONSUMIENDO
+Consumidor 2 DISPONIBLE
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:30 ART 2020
+Cantidad de lugares ocupados del buffer: 14
+Cantidad de articulos descartados: 38
+Cantidad de articulos consumidos: 350
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 2 DISPONIBLE
+Consumidor 1 OCUPADO_CONSUMIENDO
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:32 ART 2020
+Cantidad de lugares ocupados del buffer: 22
+Cantidad de articulos descartados: 38
+Cantidad de articulos consumidos: 375
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 2 OCUPADO_CONSUMIENDO
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:34 ART 2020
+Cantidad de lugares ocupados del buffer: 22
+Cantidad de articulos descartados: 43
+Cantidad de articulos consumidos: 400
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 2 OCUPADO_CONSUMIENDO
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:36 ART 2020
+Cantidad de lugares ocupados del buffer: 21
+Cantidad de articulos descartados: 67
+Cantidad de articulos consumidos: 425
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 2 OCUPADO_CONSUMIENDO
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:38 ART 2020
+Cantidad de lugares ocupados del buffer: 14
+Cantidad de articulos descartados: 67
+Cantidad de articulos consumidos: 449
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 2 OCUPADO_CONSUMIENDO
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:40 ART 2020
+Cantidad de lugares ocupados del buffer: 11
+Cantidad de articulos descartados: 67
+Cantidad de articulos consumidos: 475
+--------------------------Thread States--------------------------
+Consumidor 0 OCUPADO_CONSUMIENDO
+Consumidor 2 DISPONIBLE
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:42 ART 2020
+Cantidad de lugares ocupados del buffer: 2
+Cantidad de articulos descartados: 67
+Cantidad de articulos consumidos: 498
+--------------------------Thread States--------------------------
+Consumidor 0 OCUPADO_CONSUMIENDO
+Consumidor 2 DISPONIBLE
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:44 ART 2020
+Cantidad de lugares ocupados del buffer: 0
+Cantidad de articulos descartados: 67
+Cantidad de articulos consumidos: 522
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 2 OCUPADO_CONSUMIENDO
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:46 ART 2020
+Cantidad de lugares ocupados del buffer: 6
+Cantidad de articulos descartados: 67
+Cantidad de articulos consumidos: 547
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 2 OCUPADO_CONSUMIENDO
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:48 ART 2020
+Cantidad de lugares ocupados del buffer: 4
+Cantidad de articulos descartados: 67
+Cantidad de articulos consumidos: 572
+--------------------------Thread States--------------------------
+Consumidor 0 OCUPADO_CONSUMIENDO
+Consumidor 2 DISPONIBLE
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:50 ART 2020
+Cantidad de lugares ocupados del buffer: 1
+Cantidad de articulos descartados: 67
+Cantidad de articulos consumidos: 596
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 2 OCUPADO_CONSUMIENDO
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:52 ART 2020
+Cantidad de lugares ocupados del buffer: 24
+Cantidad de articulos descartados: 67
+Cantidad de articulos consumidos: 621
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 2 OCUPADO_CONSUMIENDO
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:54 ART 2020
+Cantidad de lugares ocupados del buffer: 14
+Cantidad de articulos descartados: 75
+Cantidad de articulos consumidos: 646
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 2 OCUPADO_CONSUMIENDO
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:56 ART 2020
+Cantidad de lugares ocupados del buffer: 21
+Cantidad de articulos descartados: 75
+Cantidad de articulos consumidos: 671
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 2 OCUPADO_CONSUMIENDO
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:41:58 ART 2020
+Cantidad de lugares ocupados del buffer: 5
+Cantidad de articulos descartados: 75
+Cantidad de articulos consumidos: 697
+--------------------------Thread States--------------------------
+Consumidor 0 OCUPADO_CONSUMIENDO
+Consumidor 2 DISPONIBLE
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:42:00 ART 2020
+Cantidad de lugares ocupados del buffer: 4
+Cantidad de articulos descartados: 75
+Cantidad de articulos consumidos: 721
+--------------------------Thread States--------------------------
+Consumidor 0 OCUPADO_CONSUMIENDO
+Consumidor 2 DISPONIBLE
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:42:02 ART 2020
+Cantidad de lugares ocupados del buffer: 7
+Cantidad de articulos descartados: 75
+Cantidad de articulos consumidos: 747
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 2 OCUPADO_CONSUMIENDO
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:42:04 ART 2020
+Cantidad de lugares ocupados del buffer: 4
+Cantidad de articulos descartados: 75
+Cantidad de articulos consumidos: 772
+--------------------------Thread States--------------------------
+Consumidor 0 OCUPADO_CONSUMIENDO
+Consumidor 2 DISPONIBLE
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:42:06 ART 2020
+Cantidad de lugares ocupados del buffer: 7
+Cantidad de articulos descartados: 75
+Cantidad de articulos consumidos: 797
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 2 DISPONIBLE
+Consumidor 1 OCUPADO_CONSUMIENDO
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:42:08 ART 2020
+Cantidad de lugares ocupados del buffer: 22
+Cantidad de articulos descartados: 75
+Cantidad de articulos consumidos: 821
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 2 DISPONIBLE
+Consumidor 1 OCUPADO_CONSUMIENDO
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:42:10 ART 2020
+Cantidad de lugares ocupados del buffer: 17
+Cantidad de articulos descartados: 80
+Cantidad de articulos consumidos: 846
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 2 OCUPADO_CONSUMIENDO
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:42:12 ART 2020
+Cantidad de lugares ocupados del buffer: 18
+Cantidad de articulos descartados: 80
+Cantidad de articulos consumidos: 870
+--------------------------Thread States--------------------------
+Consumidor 0 OCUPADO_CONSUMIENDO
+Consumidor 2 DISPONIBLE
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:42:14 ART 2020
+Cantidad de lugares ocupados del buffer: 23
+Cantidad de articulos descartados: 84
+Cantidad de articulos consumidos: 896
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 2 OCUPADO_CONSUMIENDO
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:42:16 ART 2020
+Cantidad de lugares ocupados del buffer: 14
+Cantidad de articulos descartados: 85
+Cantidad de articulos consumidos: 920
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 2 DISPONIBLE
+Consumidor 1 OCUPADO_CONSUMIENDO
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:42:18 ART 2020
+Cantidad de lugares ocupados del buffer: 24
+Cantidad de articulos descartados: 85
+Cantidad de articulos consumidos: 947
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 2 DISPONIBLE
+Consumidor 1 OCUPADO_CONSUMIENDO
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:42:20 ART 2020
+Cantidad de lugares ocupados del buffer: 21
+Cantidad de articulos descartados: 85
+Cantidad de articulos consumidos: 971
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 2 DISPONIBLE
+Consumidor 1 OCUPADO_CONSUMIENDO
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:42:22 ART 2020
+Cantidad de lugares ocupados del buffer: 24
+Cantidad de articulos descartados: 99
+Cantidad de articulos consumidos: 995
+--------------------------Thread States--------------------------
+Consumidor 0 OCUPADO_CONSUMIENDO
+Consumidor 2 DISPONIBLE
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:42:24 ART 2020
+Cantidad de lugares ocupados del buffer: 25
+Cantidad de articulos descartados: 106
+Cantidad de articulos consumidos: 1000
+--------------------------Thread States--------------------------
+Consumidor 0 DISPONIBLE
+Consumidor 2 DISPONIBLE
+Consumidor 1 DISPONIBLE
+-----------------------------------------------------------------
+Fecha de fin: Mon Apr 27 18:42:26 ART 2020
