@@ -16,19 +16,8 @@ public class Consumidor implements Runnable {
 	@Override
 	public void run() {
 		while(article.getArtConsum()<1000) {
-			try {	
 				System.out.printf("%s : I'm going to consume an article\n",Thread.currentThread().getName());
 				consume();
-				
-				Long dormir=(long)( Math.random() );
-				TimeUnit.MILLISECONDS.sleep(dormir);
-				//buffardo.setConsumerState(Thread.currentThread().getName(), Estados.DISPONIBLE.name());
-				
-			}
-
-			catch(InterruptedException e){
-				System.out.println("hay que traer el pan a la mesa");
-			}
 		}
 	}
 	
@@ -42,6 +31,20 @@ public class Consumidor implements Runnable {
 		this.estado = estado;
 	}
 	
+    public void sleep(int minimun, int maximun){
+    	int max = maximun; int min = minimun; 
+        int range = max - min+1; 
+        
+    	Long dormir=(long)(Math.random() * range) + min;
+    	try {
+    		System.out.println("-----------------------------------");
+    		System.out.println(dormir);
+    		
+			TimeUnit.MILLISECONDS.sleep(dormir);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} 
+    }
 
     
 }

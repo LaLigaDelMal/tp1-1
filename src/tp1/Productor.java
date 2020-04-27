@@ -31,20 +31,28 @@ public class Productor implements Runnable{
 	@Override
 	public void run() {
 		while(article_aux.getArtConsum()<1000) {
-			try {
-
-				Long dormir=(long)( Math.random() );
-				TimeUnit.MILLISECONDS.sleep(dormir);
+			
+				sleep(60,100);
+//				Long dormir=(long)( Math.random() );
+//				TimeUnit.MILLISECONDS.sleep(dormir);
 
 				generate();
 				if( placement() == false )
 					discard();
-			}
-
-			catch(InterruptedException e){
-				System.out.println("hay que traer el pan a la mesa");
-			}
 		}
 	}
+	
+    public void sleep(int minimun, int maximun){
+    	int max = maximun; int min = minimun; 
+        int range = max - min+1; 
+        
+    	Long dormir=(long)(Math.random() * range) + min;
+    	
+    	try {
+			TimeUnit.MILLISECONDS.sleep(dormir);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} 
+    }
 	
 }

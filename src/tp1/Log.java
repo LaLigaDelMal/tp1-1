@@ -20,8 +20,7 @@ public class Log implements Runnable {
 		this.buffer         = buffer;
 		this.consumidores = consumidores;
 
-		
-		
+	
 		try {
 			f  = new FileWriter(".\\filename.txt");
 			pw = new PrintWriter(f);
@@ -43,9 +42,6 @@ public class Log implements Runnable {
 					pw.println("Cantidad de articulos descartados: "+article_aux.getArtDisc());
 					pw.println("Cantidad de articulos consumidos: "+article_aux.getArtConsum());
 					pw.println("--------------------------Thread States--------------------------");
-					for(Thread s: consumidores) {
-						pw.println(s.getName()+": "+s.());
-					}
 //					consumerState = buffer.getConsumerState();
 //					for(String s: consumerState.keySet()) {
 //						pw.println(s+" "+consumerState.get(s));
