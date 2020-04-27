@@ -40,10 +40,11 @@ public class Buffardo {
 		}
 	}
 
-	public synchronized void takeItem() {
+	public synchronized void takeItem(Consumidor consumidor) {
 		while(lugares.size()==0) {
 			try {
-				setConsumerState(Thread.currentThread().getName(),Estados.DISPONIBLE.name());
+				//setConsumerState(Thread.currentThread().getName(),Estados.DISPONIBLE.name());
+				consumidor.setEstado(Estados.DISPONIBLE);
 				wait();
 			}
 			catch(InterruptedException e) {
@@ -53,7 +54,8 @@ public class Buffardo {
 		if(article.getArtConsum()<1000) {
 			lugares.remove();
 			article.incrementArtConsum();
-			setConsumerState(Thread.currentThread().getName(),Estados.OCUPADO_CONSUMIENDO.name());
+			//setConsumerState(Thread.currentThread().getName(),Estados.OCUPADO_CONSUMIENDO.name());
+			consumidor.setEstado(Estados.OCUPADO_CONSUMIENDO);
 			System.out.printf("Articulo consumido por %s\n", Thread.currentThread().getName());
 			notify();
 		}
