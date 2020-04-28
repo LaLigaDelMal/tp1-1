@@ -20,7 +20,7 @@ public class Log implements Runnable {
 
 	
 		try {
-			f  = new FileWriter(".\\Log.txt");
+			f  = new FileWriter(".\\acerejeas.txt");
 			pw = new PrintWriter(f);
 			pw.println("Prueba");
 		}

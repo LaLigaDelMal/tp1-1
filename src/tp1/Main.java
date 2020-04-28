@@ -2,7 +2,7 @@ package tp1;
 
 
 public class Main {
-	public static final int CANT_PROD = 5;  //Cantidad de productores
+	public static final int CANT_PROD = 10;  //Cantidad de productores
 	public static final int CANT_CONS = 3;  //Cantidad de Consumidores
 
     public static void main(String[] args) {
@@ -32,7 +32,6 @@ public class Main {
 		Thread log_t = new Thread(log);
 		log_t.start();
 		//System.exit(0);
-		System.out.println("se acabose");
     }
     
 }
